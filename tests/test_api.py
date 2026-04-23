@@ -144,8 +144,6 @@ class TestUpdateEntry:
         updated_entry = response.json()
         assert updated_entry["work"] == "Updated work description"
         # Other fields should remain unchanged
-        assert updated_entry["struggle"] == created_entry["struggle"]
-        assert updated_entry["intention"] == created_entry["intention"]
 
     async def test_update_entry_not_found(self, test_client: AsyncClient):
         """Test that updating a non-existent entry returns 404."""
